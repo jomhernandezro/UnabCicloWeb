@@ -1,0 +1,18 @@
+{
+    "compilerOptions": {
+        "target": "ES3",
+        "outDir": "./build",
+        "rootDir": ".",
+        "resolveJsonModule": true,
+        "module": "commonjs",
+        "esModuleInterop": true,
+        "strict": true,
+        "sourceMap":  true
+    },
+    "include": [
+        "src/**/*.ts"
+    ],
+    "exclude": [
+        "node_modules"
+    ]
+}

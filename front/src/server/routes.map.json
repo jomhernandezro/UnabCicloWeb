@@ -1,0 +1,7 @@
+{
+    "root": "../routes/root.routes",
+    "auth": "../routes/auth.routes",
+    "deporte":  "../routes/deporte.routes",
+    "equipo": "../routes/equipo.routes",
+    "evento": "../routes/evento.routes"
+}
