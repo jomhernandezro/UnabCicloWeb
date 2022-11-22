@@ -1,13 +1,23 @@
 const express = require('express')
+
 const app = express()
-const puerto = 3000
-const db = require('./config/db')
-//rutas
-app.use(express.json())
-app.use('/api/categoria', require('./routes/categoriasRoute'))
+const port = 8081
+const api = require('./routes/api')
+const cors = require('cors')
+const path = require('path')
 
-app.listen(puerto , ()=>{
-    console.log("Servidor Activo, puerto: " + puerto)
+require('dotenv').config()
+
+const dataBaseConnection = require('./db/config')
+dataBaseConnection()
+
+app.use(express.static('/public'))
+app.use( express.json() )
+app.use(express.urlencoded({ extended: false }));
+app.use(cors())
+
+app.use('/api', api)
+
+app.listen(port, () => {
+    console.log(`Server running in port ${ port }`)
 })
-
-db()
